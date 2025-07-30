@@ -4,6 +4,8 @@ import '../controllers/inventory_controller.dart';
 import '../models/category.dart';
 
 class AddCategoryScreen extends StatefulWidget {
+  const AddCategoryScreen({super.key});
+
   @override
   State<AddCategoryScreen> createState() => _AddCategoryScreenState();
 }

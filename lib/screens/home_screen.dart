@@ -8,6 +8,8 @@ import 'add_category_screen.dart';
 class HomeScreen extends StatelessWidget {
   final InventoryController controller = Get.put(InventoryController());
 
+  HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +46,7 @@ class HomeScreen extends StatelessWidget {
           ),
 
           // Statistics Cards - Horizontal Scroll
-          Container(
+          SizedBox(
             height: 120, // Fixed height untuk horizontal scroll
             child: Obx(
               () => ListView(
@@ -186,8 +188,8 @@ class HomeScreen extends StatelessWidget {
                                   vertical: 4,
                                 ),
                                 decoration: BoxDecoration(
-                                  color: product.stockStatusColor.withOpacity(
-                                    0.2,
+                                  color: product.stockStatusColor.withValues(
+                                    alpha: 0.2,
                                   ),
                                   borderRadius: BorderRadius.circular(12),
                                 ),
@@ -207,7 +209,7 @@ class HomeScreen extends StatelessWidget {
                                     vertical: 4,
                                   ),
                                   decoration: BoxDecoration(
-                                    color: Colors.blue.withOpacity(0.2),
+                                    color: Colors.blue.withValues(alpha: 0.2),
                                     borderRadius: BorderRadius.circular(12),
                                   ),
                                   child: Text(
@@ -226,8 +228,8 @@ class HomeScreen extends StatelessWidget {
                                     vertical: 4,
                                   ),
                                   decoration: BoxDecoration(
-                                    color: product.stockStatusColor.withOpacity(
-                                      0.2,
+                                    color: product.stockStatusColor.withValues(
+                                      alpha: 0.2,
                                     ),
                                     borderRadius: BorderRadius.circular(12),
                                   ),
@@ -305,8 +307,8 @@ class HomeScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => Get.to(() => AddProductScreen()),
-        child: Icon(Icons.add),
         tooltip: 'Add Product',
+        child: Icon(Icons.add),
       ),
     );
   }
@@ -323,9 +325,9 @@ class HomeScreen extends StatelessWidget {
       margin: EdgeInsets.only(right: 12),
       padding: EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.1),
+        color: color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: color.withOpacity(0.3)),
+        border: Border.all(color: color.withValues(alpha: 0.3)),
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -346,7 +348,7 @@ class HomeScreen extends StatelessWidget {
             title,
             style: TextStyle(
               fontSize: 12,
-              color: color.withOpacity(0.8),
+              color: color.withValues(alpha: 0.8),
               fontWeight: FontWeight.w500,
             ),
             textAlign: TextAlign.center,

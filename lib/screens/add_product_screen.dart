@@ -7,7 +7,7 @@ import '../models/category.dart';
 class AddProductScreen extends StatefulWidget {
   final Product? product; // null untuk add, berisi data untuk edit
 
-  const AddProductScreen({Key? key, this.product}) : super(key: key);
+  const AddProductScreen({super.key, this.product});
 
   @override
   State<AddProductScreen> createState() => _AddProductScreenState();

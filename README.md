@@ -1,6 +1,7 @@
 # inventory_management_supabase
 
 A new Flutter project.
+inventory management using supabase you can paste anon key and public keys
 
 ## Getting Started
 
